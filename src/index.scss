@@ -1,0 +1,12 @@
+.st-multi-select {
+  display: flex;
+
+  > * {
+    align-self: center;
+  }
+
+  .st-multi-select__handler {
+    padding: 6px 10px;
+    margin: 0 10px;
+  }
+}

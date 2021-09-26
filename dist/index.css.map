@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.scss"],"names":[],"mappings":"AAAA,iBACE,YACF,CACA,mBACE,iBACF,CACA,2CAEE,aAAc,CADd,gBAEF","file":"index.css","sourcesContent":[".st-multi-select {\n  display: flex;\n}\n.st-multi-select > * {\n  align-self: center;\n}\n.st-multi-select .st-multi-select__handler {\n  padding: 6px 10px;\n  margin: 0 10px;\n}"]}

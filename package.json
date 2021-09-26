@@ -1,0 +1,45 @@
+{
+  "name": "@kanety/stimulus-multi-select",
+  "description": "A lite stimulus controller for multiple select",
+  "version": "1.0.0",
+  "source": "src/index.js",
+  "main": "./dist/index.js",
+  "umd:main": "./dist/index.umd.js",
+  "module": "./dist/index.module.js",
+  "exports": "./dist/index.modern.js",
+  "style": "./dist/index.css",
+  "author": "Yoshikazu Kaneta <kaneta@sitebridge.co.jp>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kanety/stimulus-multi-select.git"
+  },
+  "keywords": [
+    "stimulus",
+    "mutiple select"
+  ],
+  "scripts": {
+    "watch": "node_modules/microbundle/dist/cli.js watch --globals @hotwired/stimulus=Stimulus --no-compress",
+    "build": "node_modules/microbundle/dist/cli.js build --globals @hotwired/stimulus=Stimulus",
+    "test": "node_modules/jest/bin/jest.js",
+    "start": "http-server"
+  },
+  "amdName": "StimulusMultiSelect",
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.0",
+    "@kanety/stimulus-static-actions": "^1.0.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/plugin-proposal-class-properties": "^7.14.5",
+    "@babel/plugin-proposal-private-methods": "^7.14.5",
+    "@babel/plugin-proposal-private-property-in-object": "^7.14.5",
+    "@babel/preset-env": "^7.15.0",
+    "babel-jest": "^27.1.0",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^27.1.0",
+    "microbundle": "^0.13.3",
+    "postcss": "^8.3.7",
+    "sass": "^1.42.1"
+  }
+}
