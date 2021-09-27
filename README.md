@@ -1,6 +1,6 @@
 # stimulus-multi-select
 
-A lite stimulus controller for multiple select.
+A stimulus controller for simple multiple select.
 
 ## Dependencies
 
@@ -18,7 +18,7 @@ Register controller:
 
 ```javascript
 import { Application } from '@hotwired/stimulus';
-import { MultiSelectController } from '@kanety/stimulus-multi-select';
+import MultiSelectController from '@kanety/stimulus-multi-select';
 
 const application = Application.start();
 application.register('multi-select', MultiSelectController);

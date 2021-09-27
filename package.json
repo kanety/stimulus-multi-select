@@ -1,6 +1,6 @@
 {
   "name": "@kanety/stimulus-multi-select",
-  "description": "A lite stimulus controller for multiple select",
+  "description": "A stimulus controller for simple multiple select",
   "version": "1.0.0",
   "source": "src/index.js",
   "main": "./dist/index.js",
