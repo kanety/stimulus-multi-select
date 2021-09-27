@@ -16,8 +16,8 @@ describe('sort', () => {
             </select>
           </div>
           <div>
-            <div><button type="button" data-multi-select-target="add">&gt;</button></div>
-            <div><button type="button" data-multi-select-target="remove">&lt;</button></div>
+            <div><button type="button" data-action="multi-select#add">&gt;</button></div>
+            <div><button type="button" data-action="multi-select#remove">&lt;</button></div>
           </div>
           <div>
             <select multiple data-multi-select-target="dst">
@@ -35,8 +35,8 @@ describe('sort', () => {
     element = document.querySelector('[data-controller="multi-select"]');
     src = document.querySelector('[data-multi-select-target="src"]');
     dst = document.querySelector('[data-multi-select-target="dst"]');
-    add = document.querySelector('[data-multi-select-target="add"]');
-    remove = document.querySelector('[data-multi-select-target="remove"]');
+    add = document.querySelector('[data-action="multi-select#add"]');
+    remove = document.querySelector('[data-action="multi-select#remove"]');
   });
 
   it('sorts options', () => {

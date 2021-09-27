@@ -17,8 +17,8 @@ describe('submit', () => {
           </select>
           </div>
           <div>
-            <div><button type="button" data-multi-select-target="add">&gt;</button></div>
-            <div><button type="button" data-multi-select-target="remove">&lt;</button></div>
+            <div><button type="button" data-action="multi-select#add">&gt;</button></div>
+            <div><button type="button" data-action="multi-select#remove">&lt;</button></div>
           </div>
           <div>
             <select multiple data-multi-select-target="dst">

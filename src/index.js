@@ -3,15 +3,13 @@ import '@kanety/stimulus-static-actions';
 import './index.scss';
 
 export default class extends Controller {
-  static targets = ['src', 'dst', 'add', 'remove'];
+  static targets = ['src', 'dst'];
   static values = {
     maxOptions: Number,
     sortOptions: { type: Boolean, default: false },
     selectOnSubmit: { type: Boolean, default: true }
   };
   static actions = [
-    ['add', 'click->add'],
-    ['remove', 'click->remove'],
     ['src', 'dblclick->add'],
     ['src', 'keydown->addByKey'],
     ['dst', 'dblclick->remove'],

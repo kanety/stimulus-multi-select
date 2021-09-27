@@ -36,8 +36,8 @@ Build html as follows:
     </select>
   </div>
   <div>
-    <div><button type="button" class="st-multi-select__handler" data-multi-select-target="add"></button></div>
-    <div><button type="button" class="st-multi-select__handler" data-multi-select-target="remove"></button></div>
+    <div><button type="button" class="st-multi-select__handler" data-action="multi-select#add"></button></div>
+    <div><button type="button" class="st-multi-select__handler" data-action="multi-select#remove"></button></div>
   </div>
   <div>
     <select multiple data-multi-select-target="dst"></select>
