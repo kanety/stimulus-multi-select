@@ -24,6 +24,12 @@ const application = Application.start();
 application.register('multi-select', MultiSelectController);
 ```
 
+Import css:
+
+```css
+@import '@kanety/stimulus-multi-select';
+```
+
 Build html as follows:
 
 ```html

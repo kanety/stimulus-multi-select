@@ -10,18 +10,18 @@ describe('index', () => {
       <form>
         <div data-controller="multi-select">
           <div>
-            <select multiple data-multi-select-target="src">
+            <select multiple name="src" data-multi-select-target="src">
               <option value="option1">option1</option>
               <option value="option2">option2</option>
               <option value="option3">option3</option>
             </select>
           </div>
           <div>
-            <div><button type="button" data-action="multi-select#add">&gt;</button></div>
-            <div><button type="button" data-action="multi-select#remove">&lt;</button></div>
+            <div><button type="button" name="add" data-action="multi-select#add">&gt;</button></div>
+            <div><button type="button" name="remove" data-action="multi-select#remove">&lt;</button></div>
           </div>
           <div>
-            <select multiple data-multi-select-target="dst"></select>
+            <select multiple name="dst" data-multi-select-target="dst"></select>
           </div>
         </div>
         <input type="submit" value="submit">
@@ -29,48 +29,39 @@ describe('index', () => {
     `;
   });
 
-  let element, src, dst, add, remove;
-  beforeEach(() => {
-    element = document.querySelector('[data-controller="multi-select"]');
-    src = document.querySelector('[data-multi-select-target="src"]');
-    dst = document.querySelector('[data-multi-select-target="dst"]');
-    add = document.querySelector('[data-action="multi-select#add"]');
-    remove = document.querySelector('[data-action="multi-select#remove"]');
-  });
-
   it('moves options', () => {
-    src.querySelector('option').selected = true;
-    add.click();
-    expect(src.querySelectorAll('option').length).toEqual(2);
-    expect(dst.querySelectorAll('option').length).toEqual(1);
+    $('select[name="src"] option').selected = true;
+    $('button[name="add"]').click();
+    expect($$('select[name="src"] option').length).toEqual(2);
+    expect($$('select[name="dst"] option').length).toEqual(1);
 
-    dst.querySelector('option').selected = true;
-    remove.click();
-    expect(src.querySelectorAll('option').length).toEqual(3);
-    expect(dst.querySelectorAll('option').length).toEqual(0);
+    $('select[name="dst"] option').selected = true;
+    $('button[name="remove"]').click();
+    expect($$('select[name="src"] option').length).toEqual(3);
+    expect($$('select[name="dst"] option').length).toEqual(0);
   });
 
   it('moves options by dblclick', () => {
-    src.querySelector('option').selected = true;
-    src.dispatchEvent(new MouseEvent('dblclick'));
-    expect(src.querySelectorAll('option').length).toEqual(2);
-    expect(dst.querySelectorAll('option').length).toEqual(1);
+    $('select[name="src"] option').selected = true;
+    $('select[name="src"]').dispatchEvent(new MouseEvent('dblclick'));
+    expect($$('select[name="src"] option').length).toEqual(2);
+    expect($$('select[name="dst"] option').length).toEqual(1);
 
-    dst.querySelector('option').selected = true;
-    dst.dispatchEvent(new MouseEvent('dblclick'));
-    expect(src.querySelectorAll('option').length).toEqual(3);
-    expect(dst.querySelectorAll('option').length).toEqual(0);
+    $('select[name="dst"] option').selected = true;
+    $('select[name="dst"]').dispatchEvent(new MouseEvent('dblclick'));
+    expect($$('select[name="src"] option').length).toEqual(3);
+    expect($$('select[name="dst"] option').length).toEqual(0);
   });
 
   it('moves options by enter key', () => {
-    src.querySelector('option').selected = true;
-    src.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13 }));
-    expect(src.querySelectorAll('option').length).toEqual(2);
-    expect(dst.querySelectorAll('option').length).toEqual(1);
+    $('select[name="src"] option').selected = true;
+    $('select[name="src"]').dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13 }));
+    expect($$('select[name="src"] option').length).toEqual(2);
+    expect($$('select[name="dst"] option').length).toEqual(1);
 
-    dst.querySelector('option').selected = true;
-    dst.dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13 }));
-    expect(src.querySelectorAll('option').length).toEqual(3);
-    expect(dst.querySelectorAll('option').length).toEqual(0);
+    $('select[name="dst"] option').selected = true;
+    $('select[name="dst"]').dispatchEvent(new KeyboardEvent('keydown', { keyCode: 13 }));
+    expect($$('select[name="src"] option').length).toEqual(3);
+    expect($$('select[name="dst"] option').length).toEqual(0);
   });
 });

@@ -10,18 +10,18 @@ describe('submit', () => {
       <form>
         <div data-controller="multi-select" data-multi-select-select-on-submit-value="true">
           <div>
-            <select multiple data-multi-select-target="src">
+            <select multiple name="src" data-multi-select-target="src">
               <option value="option1" selected="selected">option1</option>
               <option value="option2" selected="selected">option2</option>
               <option value="option3" selected="selected">option3</option>
           </select>
           </div>
           <div>
-            <div><button type="button" data-action="multi-select#add">&gt;</button></div>
-            <div><button type="button" data-action="multi-select#remove">&lt;</button></div>
+            <div><button type="button" name="add" data-action="multi-select#add">&gt;</button></div>
+            <div><button type="button" name="remove" data-action="multi-select#remove">&lt;</button></div>
           </div>
           <div>
-            <select multiple data-multi-select-target="dst">
+            <select multiple name="dst" data-multi-select-target="dst">
               <option value="option1">option1</option>
               <option value="option2">option2</option>
               <option value="option3">option3</option>
@@ -33,16 +33,9 @@ describe('submit', () => {
     `;
   });
 
-  let form, src, dst;
-  beforeEach(() => {
-    form = document.querySelector('form');
-    src = document.querySelector('[data-multi-select-target="src"]');
-    dst = document.querySelector('[data-multi-select-target="dst"]');
-  });
-
   it('selects options before submit', () => {
-    form.dispatchEvent(new CustomEvent('submit'));
-    expect(src.querySelectorAll('option:checked').length).toEqual(0);
-    expect(dst.querySelectorAll('option:checked').length).toEqual(3);
+    $('form').dispatchEvent(new CustomEvent('submit'));
+    expect($$('select[name="src"] option:checked').length).toEqual(0);
+    expect($$('select[name="dst"] option:checked').length).toEqual(3);
   });
 });
