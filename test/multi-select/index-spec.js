@@ -1,9 +1,3 @@
-import { Application } from '@hotwired/stimulus';
-import MultiSelectController from 'index';
-
-const application = Application.start();
-application.register('multi-select', MultiSelectController);
-
 describe('index', () => {
   beforeEach(() => {
     document.body.innerHTML = `
